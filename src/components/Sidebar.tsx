@@ -2,6 +2,8 @@ import * as React from "react";
 import styled from "styled-components";
 
 const SidebarAside = styled.aside`
+  width: 25%;
+
   h1 {
     font-family: "Source Serif 4", serif;
     font-weight: 900;

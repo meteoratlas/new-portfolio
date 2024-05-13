@@ -9,7 +9,7 @@ type Props = {
 const FullPage = styled.div`
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 `;
 
 export const BasicLayout = ({ children }: Props) => {

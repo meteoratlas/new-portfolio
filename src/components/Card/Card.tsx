@@ -1,17 +1,19 @@
 import styled from "styled-components";
+import { CardData } from "../../types/CardData";
 
-const CardTemp = styled.div`
-  min-height: 200px;
-  width: 200px;
+const CardDiv = styled.div`
+  min-height: 450px;
+  width: 350px;
   background-color: rosybrown;
 `;
 
-export const Card = () => {
+export const Card = ({ entry }: CardData) => {
   return (
     <>
-      <CardTemp>
-        <p>eff</p>
-      </CardTemp>
+      <CardDiv>
+        <img />
+        <h3>{entry.title}</h3>
+      </CardDiv>
     </>
   );
 };

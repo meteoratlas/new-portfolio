@@ -11,8 +11,7 @@ const CardTemp = styled.div`
 
 export const ProjectPage = () => {
   const { id } = useParams();
-  const p = useParams();
-  console.log(p);
+
   return (
     <BasicLayout>
       <CardTemp>

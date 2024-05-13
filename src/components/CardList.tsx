@@ -1,25 +1,23 @@
-import * as React from "react";
 import { Card } from "./Card/Card";
-import { CardData } from "../types/CardData";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
-import { Sidebar } from "./Sidebar";
+import { Link, useParams } from "react-router-dom";
 import data from "../assets/data.json";
-import { ProjectPage } from "./ProjectPage";
 import styled from "styled-components";
 
-const CardContainer = styled.section``;
+const CardContainer = styled.section`
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 64px;
+`;
 
-const List = (/*{ match, history }*/) => (
+const List = () => (
   <CardContainer>
     {data.entries.map((card) => (
       <Link to={"pages/" + card.id} key={card.id}>
-        <Card key={card.id} />
+        <Card entry={card} />
       </Link>
     ))}
   </CardContainer>
