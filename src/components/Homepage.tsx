@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { Sidebar } from "./Sidebar";
 import { CardList } from "./CardList";
+import { BasicLayout } from "./BasicLayout";
+import { motion } from "framer-motion";
 
 const CardTemp = styled.div`
   min-height: 200px;
@@ -9,15 +11,19 @@ const CardTemp = styled.div`
   background-color: salmon;
 `;
 
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 export const Homepage = () => {
   const { id } = useParams();
-  const p = useParams();
-  console.log(p);
   return (
-    <>
-      <h1>Homepage</h1>
-      <Sidebar />
-      <CardList />
-    </>
+    <BasicLayout>
+      <FlexContainer>
+        <Sidebar />
+        <CardList />
+      </FlexContainer>
+    </BasicLayout>
   );
 };
