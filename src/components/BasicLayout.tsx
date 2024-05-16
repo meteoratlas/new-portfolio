@@ -11,6 +11,7 @@ const FullPage = styled.div`
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+  position: relative;
 `;
 
 export const BasicLayout = ({ children }: Props) => {

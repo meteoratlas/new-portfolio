@@ -16,7 +16,7 @@ const CardContainer = styled.section`
 const List = () => (
   <CardContainer>
     {data.entries.map((card) => (
-      <Link to={"pages/" + card.id} key={card.id}>
+      <Link to={"pages/" + card.id} key={card.id} state={card}>
         <Card entry={card} />
       </Link>
     ))}

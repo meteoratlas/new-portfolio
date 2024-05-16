@@ -11,7 +11,13 @@
       "id": "electric-vehicles",
       "category": "Web Development",
       "title": "Nissan - Electric Vehicles",
-      "description": "An informational page for Nissan electric vehicle lineup. Worked with a small team to implement the design using React, Gatsby, and Styled Components."
+      "description": "An informational page for Nissan electric vehicle lineup. The page is meant to clear up misconceptions and answer questions users may have about electric vehicles. Of course, there is also a lot of information about Nissan's electric vehicle offerings, the ARIYA and the LEAF. The page is meant to evoke the traditional Nissan styling and layouts seen elsewhere on the site, with a more modern and edgy approach. I worked with a small team to implement the design using React, Gatsby, Framer Motion, and Styled Components.",
+      "ctas": [
+        {
+          "URL": "https://www.nissanusa.com/vehicles/electric-cars-ev.html",
+          "label": "Visit Website"
+        }
+      ]
     },
     {
       "id": "inspirations",
