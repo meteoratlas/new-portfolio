@@ -53,10 +53,10 @@ const Name = styled.div`
     top: 0;
     left: 0;
   }
-  span:nth-child(2) {
+  /* span:nth-child(2) {
     top: 72px;
     left: 42px;
-    transform: translate(-50px, -50px);
+    transform: translate(-50px, -50px); */
   }
 `;
 
@@ -79,7 +79,7 @@ export function Sidebar() {
           <span>Horan</span>
         </h1>
       </Name>
-      <p>a web and application developer based in Calgary. </p>
+      <p>a web and application developer currently based in Calgary.</p>
       <div>
         <LinkOut href="#">
           <FaLinkedinIn /> <span>Linkedin</span>

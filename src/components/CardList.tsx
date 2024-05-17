@@ -16,7 +16,7 @@ const CardContainer = styled.section`
 const List = () => (
   <CardContainer>
     {data.entries.map((card) => (
-      <Link to={"pages/" + card.id} key={card.id} state={card}>
+      <Link to={"/" + card.id} key={card.id} state={card}>
         <Card entry={card} />
       </Link>
     ))}
@@ -24,7 +24,7 @@ const List = () => (
 );
 
 export const CardList = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
 
   return <List />;
 };

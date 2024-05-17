@@ -1,5 +1,6 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, redirect, useLocation, useParams } from "react-router-dom";
 import styled from "styled-components";
+import { IoMdArrowBack } from "react-icons/io";
 import { BasicLayout } from "./BasicLayout";
 import { motion } from "framer-motion";
 
@@ -16,7 +17,13 @@ const BackLink = styled.a`
   font-family: "Source Serif 4", serif;
   font-weight: 900;
   font-style: italic;
-  margin: 2rem;
+  margin: 2rem 3rem;
+
+  svg {
+    position: absolute;
+    left: -35px;
+    top: 9px;
+  }
 `;
 
 const Typography = styled.div`
@@ -49,11 +56,18 @@ const FlexContainer = styled.div<{ $direction?: string; $width?: string }>`
   display: flex;
   flex-direction: ${(props) => props.$direction};
   width: ${(props) => props.$width};
+  justify-content: space-between;
 `;
 
 export const ProjectPage = () => {
   // const { id } = useParams();
   const location = useLocation();
+  console.log(location);
+  if (!location.state) {
+    console.log("redirecting...");
+    return redirect("/");
+  }
+  console.log("shouldnt see this");
   const { title, category, description } = location.state;
 
   return (
@@ -76,7 +90,10 @@ export const ProjectPage = () => {
       </FlexContainer>
       <BackLink>
         <motion.div whileHover={{ scale: 1.4 }}>
-          <Link to="/">Back</Link>
+          <Link to="/">
+            <IoMdArrowBack />
+            Back
+          </Link>
         </motion.div>
       </BackLink>
     </BasicLayout>
