@@ -10,7 +10,11 @@ const CardContainer = styled.section`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  margin-top: 64px;
+  margin-top: 2em;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
 `;
 
 const List = () => (

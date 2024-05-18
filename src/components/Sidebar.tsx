@@ -24,8 +24,14 @@ import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { MdEmail, MdGifBox } from "react-icons/md";
 
 const SidebarContainer = styled.div`
-  width: 100%;
+  width: 90%;
+  padding: 0 1rem;
+  font-family: "Lato", sans-serif;
   /* background-color: slateblue; */
+
+  p {
+    margin-top: 0;
+  }
 
   @media (min-width: 768px) {
     height: 100vh;
@@ -36,12 +42,17 @@ const SidebarContainer = styled.div`
 const Name = styled.div`
   position: relative;
   overflow: visible;
+  font-family: "Source Serif 4", serif;
+
   h1 {
     font-size: 72px;
     background: linear-gradient(#eee, #333);
     background-clip: text;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1em;
+    margin: 0;
     /* color: transparent; */
-    height: 200px;
     /* position: relative; */
     overflow: visible;
   }
@@ -84,7 +95,7 @@ export function Sidebar() {
         <LinkOut href="#">
           <FaLinkedinIn /> <span>Linkedin</span>
         </LinkOut>
-        <LinkOut href="#">
+        <LinkOut href="https://github.com/meteoratlas">
           <FaGithub /> <span>Github</span>
         </LinkOut>
         <LinkOut href="#">

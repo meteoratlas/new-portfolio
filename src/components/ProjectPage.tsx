@@ -10,19 +10,28 @@ const ScrollableContainer = styled.div<{ $maxHeight?: string }>`
 `;
 
 const BackLink = styled.a`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   font-size: 32px;
   font-family: "Source Serif 4", serif;
   font-weight: 900;
   font-style: italic;
-  margin: 2rem 3rem;
+
+  background-color: var(--main-color-white);
+  padding: 0.5em 1em;
 
   svg {
     position: absolute;
     left: -35px;
     top: 9px;
+  }
+
+  @media (min-width: 768px) {
+    position: absolute;
+    background-color: transparent;
+    padding: 0;
+    margin: 2rem 3rem;
   }
 `;
 
@@ -54,20 +63,25 @@ const Typography = styled.div`
 
 const FlexContainer = styled.div<{ $direction?: string; $width?: string }>`
   display: flex;
-  flex-direction: ${(props) => props.$direction};
-  width: ${(props) => props.$width};
+  flex-direction: column;
+  width: 100%;
   justify-content: space-between;
+
+  @media (min-width: 768px) {
+    flex-direction: ${(props) => props.$direction};
+    width: ${(props) => props.$width};
+  }
 `;
 
 export const ProjectPage = () => {
   // const { id } = useParams();
   const location = useLocation();
-  console.log(location);
-  if (!location.state) {
-    console.log("redirecting...");
-    return redirect("/");
-  }
-  console.log("shouldnt see this");
+  // console.log(location);
+  // if (!location.state) {
+  //   console.log("redirecting...");
+  //   return redirect("/");
+  // }
+  // console.log("shouldnt see this");
   const { title, category, description } = location.state;
 
   return (

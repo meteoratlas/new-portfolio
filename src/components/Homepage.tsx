@@ -5,15 +5,14 @@ import { CardList } from "./CardList";
 import { BasicLayout } from "./BasicLayout";
 import { motion } from "framer-motion";
 
-const CardTemp = styled.div`
-  min-height: 200px;
-  width: 200px;
-  background-color: salmon;
-`;
-
 const FlexContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    margin-top: 64px;
+  }
 `;
 
 export const Homepage = () => {
