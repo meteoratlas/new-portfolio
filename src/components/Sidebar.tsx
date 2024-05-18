@@ -77,6 +77,8 @@ const LinkOut = styled.a`
 
   span {
     margin-left: 1em;
+    font-size: 1.1em;
+    padding-bottom: 4px;
   }
 `;
 

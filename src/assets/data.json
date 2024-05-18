@@ -4,6 +4,8 @@
       "id": "new-homepage",
       "category": "Web Development",
       "title": "Nissan - New Homepage",
+      "cardImage": "ev-1.jpg",
+      "imageGallery": ["ev-1.jpg", "ev-1.jpg", "ev-1.jpg"],
       "description": "I implemented the vehicle selection component that appears at the top of the recently designed NissanUSA homepage. It is designed to use large images and dynamic animations to showcase the vehicles, and catch the user's eye as they arrive on the page. Loading speed was a key concern, and this component intelligently loads images in priority of when the user will see them.",
       "ctas": [{ "URL": "http://www.nissanusa.com", "label": "Visit Website" }]
     },
@@ -11,6 +13,7 @@
       "id": "electric-vehicles",
       "category": "Web Development",
       "title": "Nissan - Electric Vehicles",
+      "cardImage": "ev-1.jpg",
       "description": "An informational page for Nissan electric vehicle lineup. The page is meant to clear up misconceptions and answer questions users may have about electric vehicles. Of course, there is also a lot of information about Nissan's electric vehicle offerings, the ARIYA and the LEAF. The page is meant to evoke the traditional Nissan styling and layouts seen elsewhere on the site, with a more modern and edgy approach. I worked with a small team to implement the design using React, Gatsby, Framer Motion, and Styled Components.",
       "ctas": [
         {
@@ -23,6 +26,7 @@
       "id": "inspirations",
       "category": "Web Development",
       "title": "Infiniti - Inspirations",
+      "cardImage": "ev-1.jpg",
       "description": "A project for Infiniti that allows the user to save aspects of vehicles that interest them (such as trim colours, interior, and even concepts such as spaciousness) as they browse the QX60 & QX80 pages. These aspects can then be viewed as a collection of cards on a data-driven page, and shared with friends or an Infiniti retailer. I was the lead front-end developer on this project.",
       "ctas": [
         {
@@ -35,6 +39,7 @@
       "id": "platform-development",
       "category": "Web Development",
       "title": "Nissan & Infiniti - Platform Development",
+      "cardImage": "ev-1.jpg",
       "description": "I have made numerous contributions to the shared component library that powers the Nissan and Infiniti American and Canadian websites. I have added new features, fixed bugs, singlehandedly created new components (including markup, styling, and logic), and advised producers and content authors on the best usage of our library."
     }
   ]

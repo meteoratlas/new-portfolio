@@ -18,7 +18,7 @@ const BackLink = styled.a`
   font-weight: 900;
   font-style: italic;
 
-  background-color: var(--main-color-white);
+  background-color: var(--color-white);
   padding: 0.5em 1em;
 
   svg {
@@ -50,8 +50,8 @@ const Typography = styled.div`
   h3 {
     font-family: "Lato", sans-serif;
     font-size: 24px;
-    color: var(--main-color-dark-grey);
-    /* color: var(--main-color-red); */
+    color: var(--color-dark-grey);
+    /* color: var(--color-red); */
     /* color: red; */
   }
 
@@ -82,8 +82,8 @@ export const ProjectPage = () => {
   //   return redirect("/");
   // }
   // console.log("shouldnt see this");
-  const { title, category, description } = location.state;
-
+  const { title, category, description, imageGallery } = location.state;
+  console.log(imageGallery);
   return (
     <BasicLayout>
       <FlexContainer $direction="row">
@@ -96,9 +96,14 @@ export const ProjectPage = () => {
         </FlexContainer>
         <ScrollableContainer $maxHeight="100vh">
           <FlexContainer $direction="column">
-            <img src="https://placehold.co/800x500/orange/white" />
+            {/* <img src="https://placehold.co/800x500/orange/white" />
             <img src="https://placehold.co/800x500/blue/white" />
-            <img src="https://placehold.co/800x500/purple/white" />
+            <img src="https://placehold.co/800x500/purple/white" /> */}
+            {imageGallery
+              ? imageGallery.map((img: string) => {
+                  return <img key={img} src={`/images/${img}`} />;
+                })
+              : null}
           </FlexContainer>
         </ScrollableContainer>
       </FlexContainer>

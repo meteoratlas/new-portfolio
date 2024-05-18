@@ -20,7 +20,8 @@ export const Card = ({ entry }: CardData) => {
   return (
     <motion.div whileHover={{ scale: 1.05 }}>
       <CardDiv>
-        <img src="https://placehold.co/400/orange/white" />
+        {/* <img src="https://placehold.co/400/orange/white" /> */}
+        <img src={`/images/${entry.cardImage}`} />
         <h3>{entry.title}</h3>
       </CardDiv>
     </motion.div>
