@@ -12,6 +12,10 @@ const CardContainer = styled.section`
   justify-content: space-around;
   margin-top: 2em;
 
+  a {
+    text-decoration: none;
+  }
+
   @media (min-width: 768px) {
     margin-top: 0;
   }

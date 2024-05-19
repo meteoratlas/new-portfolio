@@ -29,8 +29,12 @@ const SidebarContainer = styled.div`
   font-family: "Lato", sans-serif;
   /* background-color: slateblue; */
 
+  .links {
+    margin-top: 1em;
+  }
+
   p {
-    margin-top: 0;
+    margin: 0;
   }
 
   @media (min-width: 768px) {
@@ -67,8 +71,8 @@ const Name = styled.div`
   /* span:nth-child(2) {
     top: 72px;
     left: 42px;
-    transform: translate(-50px, -50px); */
-  }
+    transform: translate(-50px, -50px); 
+  }*/
 `;
 
 const LinkOut = styled.a`
@@ -87,13 +91,11 @@ export function Sidebar() {
     <SidebarContainer>
       <p>Hi, I'm</p>
       <Name>
-        <h1>
-          <span>Kelly</span>
-          <span>Horan</span>
-        </h1>
+        <h1>Kelly</h1>
+        <h1>Horan</h1>
       </Name>
       <p>a web and application developer currently based in Calgary.</p>
-      <div>
+      <div className="links">
         <LinkOut href="#">
           <FaLinkedinIn /> <span>Linkedin</span>
         </LinkOut>
