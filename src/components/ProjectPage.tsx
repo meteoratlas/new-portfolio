@@ -7,6 +7,10 @@ import { motion } from "framer-motion";
 const ScrollableContainer = styled.div<{ $maxHeight?: string }>`
   max-height: ${(props) => props.$maxHeight};
   overflow-y: scroll;
+
+  @media (max-width: 768px) {
+    overflow: hidden;
+  }
 `;
 
 const BackLink = styled.a`
@@ -49,7 +53,7 @@ const Typography = styled.div`
 
   h3 {
     font-family: "Lato", sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     color: var(--color-dark-grey);
     /* color: var(--color-red); */
     /* color: red; */
@@ -108,7 +112,7 @@ export const ProjectPage = () => {
         </ScrollableContainer>
       </FlexContainer>
       <BackLink>
-        <motion.div whileHover={{ scale: 1.4 }}>
+        <motion.div whileHover={{ scale: 1.25 }}>
           <Link to="/">
             <IoMdArrowBack />
             Back

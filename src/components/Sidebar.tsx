@@ -40,6 +40,7 @@ const SidebarContainer = styled.div`
   @media (min-width: 768px) {
     height: 100vh;
     width: 25%;
+    max-width: 350px;
   }
 `;
 
@@ -94,9 +95,9 @@ export function Sidebar() {
         <h1>Kelly</h1>
         <h1>Horan</h1>
       </Name>
-      <p>a web and application developer currently based in Calgary.</p>
+      <p>a web and application developer.</p>
       <div className="links">
-        <LinkOut href="#">
+        <LinkOut href="https://www.linkedin.com/in/kellyhoran2/">
           <FaLinkedinIn /> <span>Linkedin</span>
         </LinkOut>
         <LinkOut href="https://github.com/meteoratlas">

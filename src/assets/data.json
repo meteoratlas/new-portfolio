@@ -49,6 +49,18 @@
       "cardImage": "thumb-pd.jpg",
       "imageGallery": ["pd-5.jpg", "pd-2.jpg", "pd-3.jpg"],
       "description": "I have made numerous contributions to the shared component library that powers the Nissan and Infiniti American and Canadian websites. I have added new features, fixed bugs, singlehandedly created new components (including markup, styling, and logic), and advised producers and content authors on the best usage of our library."
+    },
+    {
+      "id": "pointillism",
+      "category": "Software Development",
+      "title": "Procedural Pointillism",
+      "cardImage": "thumb-pp.jpg",
+      "imageGallery": [
+        "processing1/1.jpg",
+        "processing1/2.jpg",
+        "processing1/3.jpg"
+      ],
+      "description": "..."
     }
   ]
 }
