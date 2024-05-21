@@ -11,7 +11,7 @@ const FlexContainer = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    margin-top: 64px;
+    margin-top: 32px;
   }
 `;
 

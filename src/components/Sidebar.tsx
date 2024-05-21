@@ -27,7 +27,7 @@ const SidebarContainer = styled.div`
   width: 90%;
   padding: 0 1rem;
   font-family: "Lato", sans-serif;
-  /* background-color: slateblue; */
+  flex-shrink: 0;
 
   .links {
     margin-top: 1em;

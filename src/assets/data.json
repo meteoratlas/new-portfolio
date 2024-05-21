@@ -52,7 +52,7 @@
     },
     {
       "id": "pointillism",
-      "category": "Software Development",
+      "category": "Software Development, Digital Art",
       "title": "Procedural Pointillism",
       "cardImage": "thumb-pp.jpg",
       "imageGallery": [
@@ -60,7 +60,7 @@
         "processing1/2.jpg",
         "processing1/3.jpg"
       ],
-      "description": "..."
+      "description": "A digital art tool I programmed in Processing, a Java-based programming environment for interactive media projects. It takes an image as input, and 'redraws' it with geometric primitives. The colour of each shape is sampled from the image. Depending on what parameters the program is given, the resulting output can vary wildly. The photographs used in this project were also taken by me."
     }
   ]
 }

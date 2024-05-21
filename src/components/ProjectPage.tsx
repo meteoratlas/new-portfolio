@@ -2,7 +2,8 @@ import { Link, redirect, useLocation, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { IoMdArrowBack } from "react-icons/io";
 import { BasicLayout } from "./BasicLayout";
-import { motion } from "framer-motion";
+import { animate, motion, stagger } from "framer-motion";
+import { useEffect } from "react";
 
 const ScrollableContainer = styled.div<{ $maxHeight?: string }>`
   max-height: ${(props) => props.$maxHeight};
@@ -10,6 +11,18 @@ const ScrollableContainer = styled.div<{ $maxHeight?: string }>`
 
   @media (max-width: 768px) {
     overflow: hidden;
+  }
+
+  .no-shrink {
+    flex-shrink: 0;
+  }
+
+  .image-animation {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
   }
 `;
 
@@ -33,7 +46,6 @@ const BackLink = styled.a`
 
   @media (min-width: 768px) {
     position: absolute;
-    background-color: transparent;
     padding: 0;
     margin: 2rem 3rem;
   }
@@ -49,14 +61,18 @@ const Typography = styled.div`
     font-style: italic;
     margin: 0.25em 0;
     line-height: 1em;
+
+    @media (max-width: 1350px) {
+      h2 {
+        font-size: 4vw;
+      }
+    }
   }
 
   h3 {
     font-family: "Lato", sans-serif;
     font-size: 20px;
     color: var(--color-dark-grey);
-    /* color: var(--color-red); */
-    /* color: red; */
   }
 
   p {
@@ -65,11 +81,17 @@ const Typography = styled.div`
   }
 `;
 
-const FlexContainer = styled.div<{ $direction?: string; $width?: string }>`
+const FlexContainer = styled.div<{
+  $direction?: string;
+  $width?: string;
+  $shrink?: string;
+}>`
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: space-between;
+  overflow: hidden;
+  flex-shrink: ${(props) => props.$shrink};
 
   @media (min-width: 768px) {
     flex-direction: ${(props) => props.$direction};
@@ -78,31 +100,26 @@ const FlexContainer = styled.div<{ $direction?: string; $width?: string }>`
 `;
 
 export const ProjectPage = () => {
-  // const { id } = useParams();
   const location = useLocation();
-  // console.log(location);
-  // if (!location.state) {
-  //   console.log("redirecting...");
-  //   return redirect("/");
-  // }
-  // console.log("shouldnt see this");
   const { title, category, description, imageGallery } = location.state;
-  console.log(imageGallery);
+
+  useEffect(() => {
+    animate("img", { y: [200, 0] }, { delay: stagger(0.35) });
+    animate(".copy-item", { opacity: [0, 1] }, { delay: stagger(0.1) });
+  }, []);
+
   return (
     <BasicLayout>
       <FlexContainer $direction="row">
-        <FlexContainer $direction="column" $width="40%">
-          <Typography>
-            <h2>{title}</h2>
-            <h3>{category}</h3>
-            <p>{description}</p>
+        <FlexContainer $direction="column" $width="40%" $shrink="0">
+          <Typography lang="en">
+            <h2 className="copy-item">{title}</h2>
+            <h3 className="copy-item">{category}</h3>
+            <p className="copy-item">{description}</p>
           </Typography>
         </FlexContainer>
         <ScrollableContainer $maxHeight="100vh">
           <FlexContainer $direction="column">
-            {/* <img src="https://placehold.co/800x500/orange/white" />
-            <img src="https://placehold.co/800x500/blue/white" />
-            <img src="https://placehold.co/800x500/purple/white" /> */}
             {imageGallery
               ? imageGallery.map((img: string) => {
                   return <img key={img} src={`/images/${img}`} />;
