@@ -45,7 +45,7 @@
     {
       "id": "platform-development",
       "category": "Web Development",
-      "title": "Nissan & Infiniti - Platform Development",
+      "title": "Nissan & Infiniti - Platform Develop­ment",
       "cardImage": "thumb-pd.jpg",
       "imageGallery": ["pd-5.jpg", "pd-2.jpg", "pd-3.jpg"],
       "description": "I have made numerous contributions to the shared component library that powers the Nissan and Infiniti American and Canadian websites. I have added new features, fixed bugs, singlehandedly created new components (including markup, styling, and logic), and advised producers and content authors on the best usage of our library."
