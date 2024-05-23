@@ -1,4 +1,4 @@
-interface CardCTA {
+export interface CardCTA {
   URL: string;
   label: string;
 }

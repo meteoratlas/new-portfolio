@@ -4,6 +4,7 @@ import { IoMdArrowBack } from "react-icons/io";
 import { BasicLayout } from "./BasicLayout";
 import { animate, motion, stagger } from "framer-motion";
 import { useEffect } from "react";
+import { CardCTA } from "../types/CardData";
 
 const ScrollableContainer = styled.div<{ $maxHeight?: string }>`
   max-height: ${(props) => props.$maxHeight};
@@ -34,6 +35,8 @@ const BackLink = styled.a`
   font-family: "Source Serif 4", serif;
   font-weight: 900;
   font-style: italic;
+  border-top: 2px solid var(--color-black);
+  border-right: 2px solid var(--color-black);
 
   background-color: var(--color-white);
   padding: 0.5em 1em;
@@ -42,12 +45,18 @@ const BackLink = styled.a`
     position: absolute;
     left: -35px;
     top: 9px;
+    display: none;
+
+    @media (min-width: 768px) {
+      display: inline;
+    }
   }
 
   @media (min-width: 768px) {
     position: absolute;
     padding: 0;
     margin: 2rem 3rem;
+    border: none;
   }
 `;
 
@@ -79,6 +88,21 @@ const Typography = styled.div`
     font-family: "Lato", sans-serif;
     font-size: 18px;
   }
+
+  .cta {
+    padding: 0.5em;
+    text-decoration: none;
+    transition: background-color 0.4s;
+    font-family: "Lato", sans-serif;
+    font-size: 22px;
+    margin-top: 4px;
+    border: 2px solid var(--color-dark-grey);
+  }
+
+  .cta:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
 `;
 
 const FlexContainer = styled.div<{
@@ -101,7 +125,7 @@ const FlexContainer = styled.div<{
 
 export const ProjectPage = () => {
   const location = useLocation();
-  const { title, category, description, imageGallery } = location.state;
+  const { title, category, description, imageGallery, ctas } = location.state;
 
   useEffect(() => {
     animate("img", { y: [200, 0] }, { delay: stagger(0.35) });
@@ -116,6 +140,17 @@ export const ProjectPage = () => {
             <h2 className="copy-item">{title}</h2>
             <h3 className="copy-item">{category}</h3>
             <p className="copy-item">{description}</p>
+            <div>
+              {ctas
+                ? ctas.map((cta: CardCTA) => {
+                    return (
+                      <a className="cta" href={cta.URL} key={cta.URL}>
+                        {cta.label}
+                      </a>
+                    );
+                  })
+                : null}
+            </div>
           </Typography>
         </FlexContainer>
         <ScrollableContainer $maxHeight="100vh">

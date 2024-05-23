@@ -57,23 +57,15 @@ const Name = styled.div`
     font-style: italic;
     line-height: 1em;
     margin: 0;
-    /* color: transparent; */
-    /* position: relative; */
     overflow: visible;
   }
   span {
-    /* position: absolute; */
     display: inline-block;
   }
   span:first-child {
     top: 0;
     left: 0;
   }
-  /* span:nth-child(2) {
-    top: 72px;
-    left: 42px;
-    transform: translate(-50px, -50px); 
-  }*/
 `;
 
 const LinkOut = styled.a`
@@ -95,7 +87,11 @@ export function Sidebar() {
         <h1>Kelly</h1>
         <h1>Horan</h1>
       </Name>
-      <p>a web and application developer.</p>
+      <p>
+        a web and application developer specializing in front end development.
+        Here are a few of the projects I've worked on over my many years as a
+        developer, from things I've done at work to personal projects.
+      </p>
       <div className="links">
         <LinkOut href="https://www.linkedin.com/in/kellyhoran2/">
           <FaLinkedinIn /> <span>Linkedin</span>

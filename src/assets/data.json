@@ -5,8 +5,8 @@
       "category": "Web Development",
       "title": "Nissan - New Homepage",
       "cardImage": "thumb-nissan.jpg",
-      "imageGallery": ["nissan-1.jpg"],
-      "description": "I implemented the vehicle selection component that appears at the top of the recently designed NissanUSA homepage. It is designed to use large images and dynamic animations to showcase the vehicles, and catch the user's eye as they arrive on the page. Loading speed was a key concern, and this component intelligently loads images in priority of when the user will see them.",
+      "imageGallery": ["nissan-1.jpg", "nissan-2.jpg"],
+      "description": "Our team was recently engaged to redo the homepage of the Nissan USA website, and I implemented the vehicle selection component that appears at the top. It is designed to use large images and dynamic animations to showcase the vehicles, and catch the user's eye as they arrive on the page. Loading speed was a key concern, and this component intelligently lazy loads images in priority of when the user will see them. The animation is handled using clipping masks.",
       "ctas": [{ "URL": "http://www.nissanusa.com", "label": "Visit Website" }]
     },
     {
@@ -15,7 +15,7 @@
       "title": "Nissan - Electric Vehicles",
       "cardImage": "thumb-ev.jpg",
       "imageGallery": ["ev-1.jpg", "ev-2.jpg", "ev-3.jpg"],
-      "description": "An informational page for Nissan electric vehicle lineup. The page is meant to clear up misconceptions and answer questions users may have about electric vehicles. Of course, there is also a lot of information about Nissan's electric vehicle offerings, the ARIYA and the LEAF. The page is meant to evoke the traditional Nissan styling and layouts seen elsewhere on the site, with a more modern and edgy approach. I worked with a small team to implement the design using React, Gatsby, Framer Motion, and Styled Components.",
+      "description": "An informational page for Nissan electric vehicle lineup. The page is meant to clear up misconceptions and answer questions users may have about electric vehicles. Of course, there is also a lot of information about Nissan's electric vehicle offerings, the ARIYA and the LEAF. The page is meant to evoke the traditional Nissan styling and layouts seen elsewhere on the site, with a more modern approach. I worked with a small team at my company to implement the design using React, Gatsby, Framer Motion, and Styled Components.",
       "ctas": [
         {
           "URL": "https://www.nissanusa.com/vehicles/electric-cars-ev.html",
@@ -34,7 +34,7 @@
         "inspire-4.jpg",
         "inspire-3.jpg"
       ],
-      "description": "A project for Infiniti that allows the user to save aspects of vehicles that interest them (such as trim colours, interior, and even concepts such as spaciousness) as they browse the QX60 & QX80 pages. These aspects can then be viewed as a collection of cards on a data-driven page, and shared with friends or an Infiniti retailer. I was the lead front-end developer on this project.",
+      "description": "A project for Infiniti that allows the user to save aspects of vehicles that interest them (such as trim colours, interior, and even concepts such as spaciousness) as they browse the QX60 & QX80 pages. These aspects can then be viewed as a collection of cards on a data-driven page, and shared with friends, family, or an Infiniti retailer.  I was the lead front-end developer on this project",
       "ctas": [
         {
           "URL": "https://www.infinitiusa.com/shopping-tools/inspire.html",
@@ -48,7 +48,14 @@
       "title": "Nissan & Infiniti - Platform Develop­ment",
       "cardImage": "thumb-pd.jpg",
       "imageGallery": ["pd-5.jpg", "pd-2.jpg", "pd-3.jpg"],
-      "description": "I have made numerous contributions to the shared component library that powers the Nissan and Infiniti American and Canadian websites. I have added new features, fixed bugs, singlehandedly created new components (including markup, styling, and logic), and advised producers and content authors on the best usage of our library."
+      "description": "I have made countless contributions to the shared component library that powers the Nissan and Infiniti American and Canadian websites. I have added new features, fixed bugs, singlehandedly created new components (including markup, styling, and logic), and advised producers and content authors on the best usage of our library.",
+      "ctas": [
+        { "URL": "http://www.nissanusa.com", "label": "Visit Nissan Website" },
+        {
+          "URL": "http://www.infinitiusa.com",
+          "label": "Visit Infiniti Website"
+        }
+      ]
     },
     {
       "id": "pointillism",
@@ -61,6 +68,28 @@
         "processing1/3.jpg"
       ],
       "description": "A digital art tool I programmed in Processing, a Java-based programming environment for interactive media projects. It takes an image as input, and 'redraws' it with geometric primitives. The colour of each shape is sampled from the image. Depending on what parameters the program is given, the resulting output can vary wildly. The photographs used in this project were also taken by me."
+    },
+    {
+      "id": "portfolio",
+      "category": "Web Development, Web Design",
+      "title": "Personal Portfolio Site",
+      "cardImage": "thumb-pp.jpg",
+      "imageGallery": [
+        "processing1/1.jpg",
+        "processing1/2.jpg",
+        "processing1/3.jpg"
+      ],
+      "description": "I recently decided to redo my personal portfolio to showcase my work, and after a few designs, landed on this. I wanted to combine a clean, minimalist appearance reminiscent of magazine spreads with animation only available in the digital realm. I leaned on React Router to give the site a smooth SPA feel, and used Styled Components and Framer Motion for the styling and animation.",
+      "ctas": [
+        {
+          "URL": "https://www.kellyhoran.ca",
+          "label": "Visit Website"
+        },
+        {
+          "URL": "https://github.com/meteoratlas/new-portfolio",
+          "label": "Github"
+        }
+      ]
     }
   ]
 }
