@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
@@ -16,6 +16,16 @@ const FullPage = styled.div`
 
 export const BasicLayout = ({ children }: Props) => {
   const location = useLocation();
+  const reducedMotion = useReducedMotion();
+
+  if (reducedMotion) {
+    return (
+      <div>
+        <FullPage>{children}</FullPage>
+      </div>
+    );
+  }
+
   return (
     <motion.div
       initial={{ x: 100, opacity: 0 }}

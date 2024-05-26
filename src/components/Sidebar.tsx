@@ -23,7 +23,7 @@ import styled from "styled-components";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { MdEmail, MdGifBox } from "react-icons/md";
 import { useEffect } from "react";
-import { animate, stagger } from "framer-motion";
+import { animate, stagger, useReducedMotion } from "framer-motion";
 
 const SidebarContainer = styled.div`
   width: 90%;
@@ -82,12 +82,16 @@ const LinkOut = styled.a`
 `;
 
 export function Sidebar() {
+  const reducedMotion = useReducedMotion();
+
   useEffect(() => {
-    animate(
-      ".copy-item",
-      { y: ["100%", 0], opacity: [0, 1] },
-      { delay: stagger(0.1) }
-    );
+    if (!reducedMotion) {
+      animate(
+        ".copy-item",
+        { y: ["100%", 0], opacity: [0, 1] },
+        { delay: stagger(0.1) }
+      );
+    }
   }, []);
 
   return (

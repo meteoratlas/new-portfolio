@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import data from "../assets/data.json";
 import styled from "styled-components";
 import { useEffect } from "react";
-import { animate, stagger } from "framer-motion";
+import { animate, stagger, useReducedMotion } from "framer-motion";
 
 const CardContainer = styled.section`
   /* display: flex;
@@ -41,12 +41,16 @@ const List = () => (
 );
 
 export const CardList = () => {
+  const reducedMotion = useReducedMotion();
+
   useEffect(() => {
-    animate(
-      ".card",
-      { y: ["100%", 0], opacity: [0, 1] },
-      { delay: stagger(0.1) }
-    );
+    if (!reducedMotion) {
+      animate(
+        ".card",
+        { y: ["100%", 0], opacity: [0, 1] },
+        { delay: stagger(0.1) }
+      );
+    }
   }, []);
 
   return <List />;

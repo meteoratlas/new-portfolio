@@ -2,7 +2,7 @@ import { Link, redirect, useLocation, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { IoMdArrowBack } from "react-icons/io";
 import { BasicLayout } from "./BasicLayout";
-import { animate, motion, stagger } from "framer-motion";
+import { animate, motion, stagger, useReducedMotion } from "framer-motion";
 import { useEffect } from "react";
 import { CardCTA } from "../types/CardData";
 
@@ -136,11 +136,15 @@ const FlexContainer = styled.div<{
 
 export const ProjectPage = () => {
   const location = useLocation();
+  const reducedMotion = useReducedMotion();
+
   const { title, category, description, imageGallery, ctas } = location.state;
 
   useEffect(() => {
-    animate("img", { y: [200, 0] }, { delay: stagger(0.35) });
-    animate(".copy-item", { opacity: [0, 1] }, { delay: stagger(0.1) });
+    if (!reducedMotion) {
+      animate("img", { y: [200, 0] }, { delay: stagger(0.35) });
+      animate(".copy-item", { opacity: [0, 1] }, { delay: stagger(0.1) });
+    }
   }, []);
 
   return (
@@ -175,7 +179,7 @@ export const ProjectPage = () => {
         </ScrollableContainer>
       </FlexContainer>
       <BackLink>
-        <motion.div whileHover={{ scale: 1.25 }}>
+        <motion.div whileHover={{ scale: reducedMotion ? 1 : 1.25 }}>
           <Link to="/">
             <IoMdArrowBack />
             Back

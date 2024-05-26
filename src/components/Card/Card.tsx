@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { CardData } from "../../types/CardData";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const CardDiv = styled.div`
   min-height: 400px;
@@ -29,8 +29,10 @@ const CardDiv = styled.div`
 `;
 
 export const Card = ({ entry }: CardData) => {
+  const reducedMotion = useReducedMotion();
+
   return (
-    <motion.div whileHover={{ scale: 1.05 }}>
+    <motion.div whileHover={{ scale: reducedMotion ? 1 : 1.05 }}>
       <CardDiv className="card">
         {/* <img src="https://placehold.co/400/orange/white" /> */}
         <img src={`/images/${entry.cardImage}`} />
