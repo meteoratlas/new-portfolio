@@ -22,6 +22,8 @@
 import styled from "styled-components";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { MdEmail, MdGifBox } from "react-icons/md";
+import { useEffect } from "react";
+import { animate, stagger } from "framer-motion";
 
 const SidebarContainer = styled.div`
   width: 90%;
@@ -39,8 +41,8 @@ const SidebarContainer = styled.div`
 
   @media (min-width: 768px) {
     height: 100vh;
-    width: 25%;
-    max-width: 350px;
+    width: 28%;
+    /* max-width: 350px; */
   }
 `;
 
@@ -80,19 +82,27 @@ const LinkOut = styled.a`
 `;
 
 export function Sidebar() {
+  useEffect(() => {
+    animate(
+      ".copy-item",
+      { y: ["100%", 0], opacity: [0, 1] },
+      { delay: stagger(0.1) }
+    );
+  }, []);
+
   return (
     <SidebarContainer>
-      <p>Hi, I'm</p>
-      <Name>
+      <p className="copy-item">Hi, I'm</p>
+      <Name className="copy-item">
         <h1>Kelly</h1>
         <h1>Horan</h1>
       </Name>
-      <p>
+      <p className="copy-item">
         a web and application developer specializing in front end development.
         Here are a few of the projects I've worked on over my many years as a
         developer, from things I've done at work to personal projects.
       </p>
-      <div className="links">
+      <div className="links copy-item">
         <LinkOut href="https://www.linkedin.com/in/kellyhoran2/">
           <FaLinkedinIn /> <span>Linkedin</span>
         </LinkOut>

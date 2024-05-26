@@ -89,6 +89,16 @@ const Typography = styled.div`
     font-size: 18px;
   }
 
+  .cta-container {
+    margin-top: 32px;
+    display: flex;
+    /* flex-direction: column;
+
+    @media (max-width: 1350px) {
+      flex-direction: row;
+    } */
+  }
+
   .cta {
     padding: 0.5em;
     text-decoration: none;
@@ -96,6 +106,7 @@ const Typography = styled.div`
     font-family: "Lato", sans-serif;
     font-size: 22px;
     margin-top: 4px;
+    margin-right: 8px;
     border: 2px solid var(--color-dark-grey);
   }
 
@@ -140,7 +151,7 @@ export const ProjectPage = () => {
             <h2 className="copy-item">{title}</h2>
             <h3 className="copy-item">{category}</h3>
             <p className="copy-item">{description}</p>
-            <div>
+            <div className="cta-container">
               {ctas
                 ? ctas.map((cta: CardCTA) => {
                     return (

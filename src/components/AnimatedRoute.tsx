@@ -12,7 +12,6 @@ export const AnimatedRoute = () => {
       initial={false}
       onExitComplete={() => {
         window.scrollTo(0, 0);
-        console.log("anim complete");
       }}
     >
       <Routes location={location} key={location.pathname}>

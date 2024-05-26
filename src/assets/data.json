@@ -6,7 +6,7 @@
       "title": "Nissan - New Homepage",
       "cardImage": "thumb-nissan.jpg",
       "imageGallery": ["nissan-1.jpg", "nissan-2.jpg"],
-      "description": "Our team was recently engaged to redo the homepage of the Nissan USA website, and I implemented the vehicle selection component that appears at the top. It is designed to use large images and dynamic animations to showcase the vehicles, and catch the user's eye as they arrive on the page. Loading speed was a key concern, and this component intelligently lazy loads images in priority of when the user will see them. The animation is handled using clipping masks.",
+      "description": "Our team was recently engaged to redo the homepage of the Nissan USA website, and I implemented the vehicle selection component that appears at the top. It is designed to use large images and dynamic animations to showcase the vehicles, and catch the user's eye as they arrive on the page. As the leading element on a highly-trafficked page, loading speed was a key concern. This component intelligently lazy loads images in priority of when the user will see them. The animation is handled by stacking the images and adjusting their z-index to minimize reflows. A clipping mask animation is then used to wipe to the selected image, creating a smooth and elegant effect.",
       "ctas": [{ "URL": "http://www.nissanusa.com", "label": "Visit Website" }]
     },
     {
@@ -68,28 +68,6 @@
         "processing1/3.jpg"
       ],
       "description": "A digital art tool I programmed in Processing, a Java-based programming environment for interactive media projects. It takes an image as input, and 'redraws' it with geometric primitives. The colour of each shape is sampled from the image. Depending on what parameters the program is given, the resulting output can vary wildly. The photographs used in this project were also taken by me."
-    },
-    {
-      "id": "portfolio",
-      "category": "Web Development, Web Design",
-      "title": "Personal Portfolio Site",
-      "cardImage": "thumb-pp.jpg",
-      "imageGallery": [
-        "processing1/1.jpg",
-        "processing1/2.jpg",
-        "processing1/3.jpg"
-      ],
-      "description": "I recently decided to redo my personal portfolio to showcase my work, and after a few designs, landed on this. I wanted to combine a clean, minimalist appearance reminiscent of magazine spreads with animation only available in the digital realm. I leaned on React Router to give the site a smooth SPA feel, and used Styled Components and Framer Motion for the styling and animation.",
-      "ctas": [
-        {
-          "URL": "https://www.kellyhoran.ca",
-          "label": "Visit Website"
-        },
-        {
-          "URL": "https://github.com/meteoratlas/new-portfolio",
-          "label": "Github"
-        }
-      ]
     }
   ]
 }
