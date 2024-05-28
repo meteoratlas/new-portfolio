@@ -51,7 +51,7 @@ export const CardList = () => {
       animate(
         ".card",
         { y: ["100%", 0], opacity: [0, 1] },
-        { delay: stagger(0.1) }
+        { delay: stagger(0.1, { startDelay: 0.5 }) }
       );
     }
   }, []);

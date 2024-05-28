@@ -46,9 +46,19 @@ const SidebarContainer = styled.div`
     /* max-width: 350px; */
   }
 
-  input {
+  button {
     margin-top: 4em;
-    border-radius: 50%;
+    background: transparent;
+    position: fixed;
+    bottom: 16px;
+    border: 1px solid var(--color-black);
+    padding: 0.5em;
+    transition: color 0.5s, background-color 0.5s;
+  }
+
+  button:hover {
+    background-color: var(--color-dark-grey);
+    color: var(--color-white);
   }
 `;
 
@@ -92,12 +102,8 @@ export function Sidebar() {
   const reducedMotion = useReducedMotion(context);
 
   useEffect(() => {
-    if (reducedMotion.noMotion) {
-      animate(
-        ".copy-item",
-        { y: ["100%", 0], opacity: [0, 1] },
-        { delay: stagger(0.1) }
-      );
+    if (!reducedMotion.noMotion) {
+      animate(".copy-item", { opacity: [0, 1] }, { delay: stagger(0.1) });
     }
   }, [reducedMotion]);
 
@@ -124,16 +130,14 @@ export function Sidebar() {
           <MdEmail /> <span>Email</span>
         </LinkOut>
       </div>
-      <label htmlFor="motion">Reduce Motion</label>
-      <input
-        type="checkbox"
-        name="motion"
+      <button
         value={context.noMotion}
-        checked={context.noMotion}
-        onChange={() => {
+        onClick={() => {
           context.setNoMotion(!context.noMotion);
         }}
-      />
+      >
+        {context.noMotion ? "Enable Motion?" : "Reduce Motion?"}
+      </button>
     </SidebarContainer>
   );
 }
