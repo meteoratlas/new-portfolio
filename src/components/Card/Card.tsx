@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { CardData } from "../../types/CardData";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import useReducedMotion from "../../hooks/useReducedMotion";
+import { useContext } from "react";
+import { AppStateContext } from "../../context/AppState";
 
 const CardDiv = styled.div`
   min-height: 400px;
@@ -29,7 +32,8 @@ const CardDiv = styled.div`
 `;
 
 export const Card = ({ entry }: CardData) => {
-  const reducedMotion = useReducedMotion();
+  const context = useContext(AppStateContext);
+  const reducedMotion = useReducedMotion(context);
 
   return (
     <motion.div whileHover={{ scale: reducedMotion ? 1 : 1.05 }}>

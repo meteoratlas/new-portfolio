@@ -1,7 +1,9 @@
-import { motion, useReducedMotion } from "framer-motion";
-import { ReactNode } from "react";
+import { motion } from "framer-motion";
+import { ReactNode, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+import { AppStateContext } from "../context/AppState";
+import useReducedMotion from "../hooks/useReducedMotion";
 
 type Props = {
   children: ReactNode;
@@ -16,7 +18,8 @@ const FullPage = styled.div`
 
 export const BasicLayout = ({ children }: Props) => {
   const location = useLocation();
-  const reducedMotion = useReducedMotion();
+  const context = useContext(AppStateContext);
+  const reducedMotion = useReducedMotion(context);
 
   if (reducedMotion) {
     return (

@@ -2,8 +2,10 @@ import { Card } from "./Card/Card";
 import { Link, useParams } from "react-router-dom";
 import data from "../assets/data.json";
 import styled from "styled-components";
-import { useEffect } from "react";
-import { animate, stagger, useReducedMotion } from "framer-motion";
+import { useContext, useEffect } from "react";
+import { animate, stagger } from "framer-motion";
+import { AppStateContext } from "../context/AppState";
+import useReducedMotion from "../hooks/useReducedMotion";
 
 const CardContainer = styled.section`
   /* display: flex;
@@ -41,7 +43,8 @@ const List = () => (
 );
 
 export const CardList = () => {
-  const reducedMotion = useReducedMotion();
+  const context = useContext(AppStateContext);
+  const reducedMotion = useReducedMotion(context);
 
   useEffect(() => {
     if (!reducedMotion) {

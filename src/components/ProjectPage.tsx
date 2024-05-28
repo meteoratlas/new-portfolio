@@ -1,10 +1,12 @@
-import { Link, redirect, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { IoMdArrowBack } from "react-icons/io";
 import { BasicLayout } from "./BasicLayout";
-import { animate, motion, stagger, useReducedMotion } from "framer-motion";
-import { useEffect } from "react";
+import { animate, motion, stagger } from "framer-motion";
+import { useContext, useEffect } from "react";
 import { CardCTA } from "../types/CardData";
+import useReducedMotion from "../hooks/useReducedMotion";
+import { AppStateContext } from "../context/AppState";
 
 const ScrollableContainer = styled.div<{ $maxHeight?: string }>`
   max-height: ${(props) => props.$maxHeight};
@@ -136,7 +138,8 @@ const FlexContainer = styled.div<{
 
 export const ProjectPage = () => {
   const location = useLocation();
-  const reducedMotion = useReducedMotion();
+  const context = useContext(AppStateContext);
+  const reducedMotion = useReducedMotion(context);
 
   const { title, category, description, imageGallery, ctas } = location.state;
 

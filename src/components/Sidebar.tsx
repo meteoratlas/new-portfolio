@@ -22,8 +22,9 @@
 import styled from "styled-components";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { MdEmail, MdGifBox } from "react-icons/md";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { animate, stagger, useReducedMotion } from "framer-motion";
+import { AppStateContext } from "../context/AppState";
 
 const SidebarContainer = styled.div`
   width: 90%;
@@ -43,6 +44,11 @@ const SidebarContainer = styled.div`
     height: 100vh;
     width: 28%;
     /* max-width: 350px; */
+  }
+
+  input {
+    margin-top: 4em;
+    border-radius: 50%;
   }
 `;
 
@@ -82,17 +88,18 @@ const LinkOut = styled.a`
 `;
 
 export function Sidebar() {
-  const reducedMotion = useReducedMotion();
+  const context = useContext(AppStateContext);
+  const reducedMotion = useReducedMotion(context);
 
   useEffect(() => {
-    if (!reducedMotion) {
+    if (reducedMotion.noMotion) {
       animate(
         ".copy-item",
         { y: ["100%", 0], opacity: [0, 1] },
         { delay: stagger(0.1) }
       );
     }
-  }, []);
+  }, [reducedMotion]);
 
   return (
     <SidebarContainer>
@@ -117,6 +124,16 @@ export function Sidebar() {
           <MdEmail /> <span>Email</span>
         </LinkOut>
       </div>
+      <label htmlFor="motion">Reduce Motion</label>
+      <input
+        type="checkbox"
+        name="motion"
+        value={context.noMotion}
+        checked={context.noMotion}
+        onChange={() => {
+          context.setNoMotion(!context.noMotion);
+        }}
+      />
     </SidebarContainer>
   );
 }
