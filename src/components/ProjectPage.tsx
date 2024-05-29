@@ -29,7 +29,7 @@ const ScrollableContainer = styled.div<{ $maxHeight?: string }>`
   }
 `;
 
-const BackLink = styled.a`
+const BackLink = styled.div`
   position: fixed;
   bottom: 0;
   left: 0;

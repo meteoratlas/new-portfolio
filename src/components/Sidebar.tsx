@@ -48,12 +48,21 @@ const SidebarContainer = styled.div`
 
   button {
     margin-top: 4em;
-    background: transparent;
+    background: var(--color-white);
+    z-index: 2;
     position: fixed;
     bottom: 16px;
     border: 1px solid var(--color-black);
     padding: 0.5em;
     transition: color 0.5s, background-color 0.5s;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      bottom: unset;
+      top: 16px;
+      right: 32px;
+      margin-top: 0;
+    }
   }
 
   button:hover {
@@ -126,9 +135,9 @@ export function Sidebar() {
         <LinkOut href="https://github.com/meteoratlas">
           <FaGithub /> <span>Github</span>
         </LinkOut>
-        <LinkOut href="#">
-          <MdEmail /> <span>Email</span>
-        </LinkOut>
+        {/* <LinkOut href="#"> */}
+        {/* <MdEmail /> <span>Email</span> */}
+        {/* </LinkOut> */}
       </div>
       <button
         value={context.noMotion}
