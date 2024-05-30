@@ -9,5 +9,6 @@ export interface CardData {
   title: string;
   ctas: CardCTA[];
   cardImage: string;
+  cardAlt: string;
   imageGallery: string[];
 }

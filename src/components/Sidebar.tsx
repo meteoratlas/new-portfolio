@@ -40,6 +40,10 @@ const SidebarContainer = styled.div`
     margin: 0;
   }
 
+  p:nth-child(n + 2) {
+    margin-top: 16px;
+  }
+
   @media (min-width: 768px) {
     height: 100vh;
     width: 28%;
@@ -125,9 +129,17 @@ export function Sidebar() {
       </Name>
       <p className="copy-item">
         a web and application developer specializing in front end development.
-        Here are a few of the projects I've worked on over my many years as a
-        developer, from things I've done at work to personal projects.
       </p>
+      <p className="copy-item">
+        I've had an interest in the intersection between art and technology
+        since I was young, and have been lucky enough to fulfill that interest
+        in web dev. I currently work as a Senior Developer at Critical Mass.
+      </p>
+      <p className="copy-item">
+        Here are a few of the projects I've worked on, from things I've done at
+        work to smaller personal projects.
+      </p>
+
       <div className="links copy-item">
         <LinkOut href="https://www.linkedin.com/in/kellyhoran2/">
           <FaLinkedinIn /> <span>Linkedin</span>

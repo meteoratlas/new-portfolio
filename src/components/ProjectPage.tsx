@@ -43,6 +43,11 @@ const BackLink = styled.div`
   background-color: var(--color-white);
   padding: 0.5em 1em;
 
+  a,
+  a:visited {
+    color: var(--color-black);
+  }
+
   svg {
     position: absolute;
     left: -35px;
@@ -162,7 +167,12 @@ export const ProjectPage = () => {
               {ctas
                 ? ctas.map((cta: CardCTA) => {
                     return (
-                      <a className="cta" href={cta.URL} key={cta.URL}>
+                      <a
+                        className="cta"
+                        href={cta.URL}
+                        key={cta.URL}
+                        target="_blank"
+                      >
                         {cta.label}
                       </a>
                     );

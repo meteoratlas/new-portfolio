@@ -10,6 +10,7 @@ const CardDiv = styled.div`
   width: 350px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   text-decoration: none;
+  color: var(--color-black);
 
   img {
     max-width: 100%;
@@ -38,8 +39,7 @@ export const Card = ({ entry }: CardData) => {
   return (
     <motion.div whileHover={{ scale: reducedMotion ? 1 : 1.05 }}>
       <CardDiv className="card">
-        {/* <img src="https://placehold.co/400/orange/white" /> */}
-        <img src={`/images/${entry.cardImage}`} />
+        <img src={`/images/${entry.cardImage}`} alt={entry.cardAlt} />
         <div className="title">
           {" "}
           <h3>{entry.title}</h3>
