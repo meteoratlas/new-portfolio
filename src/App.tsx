@@ -10,9 +10,9 @@ function App() {
 
   return (
     <AppStateContext.Provider value={{ noMotion, setNoMotion, data }}>
-      <BrowserRouter>
+      <HashRouter>
         <AnimatedRoute />
-      </BrowserRouter>
+      </HashRouter>
     </AppStateContext.Provider>
   );
 }
