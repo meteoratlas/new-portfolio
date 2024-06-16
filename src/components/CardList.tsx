@@ -1,5 +1,5 @@
 import { Card } from "./Card/Card";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import data from "../assets/data.json";
 import styled from "styled-components";
 import { useContext, useEffect } from "react";
@@ -8,15 +8,8 @@ import { AppStateContext } from "../context/AppState";
 import useReducedMotion from "../hooks/useReducedMotion";
 
 const CardContainer = styled.section`
-  /* display: flex;
-  flex-direction: row;
-  gap: 16px;
-  flex-wrap: wrap;
-  /* align-items: center; 
-  justify-content: space-around; */
   display: grid;
   grid-template-columns: repeat(auto-fill, 350px);
-  /* grid-gap: 1rem; */
   justify-content: space-around;
   margin-top: 2em;
   width: 100%;

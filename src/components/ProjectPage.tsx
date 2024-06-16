@@ -8,6 +8,11 @@ import { CardCTA } from "../types/CardData";
 import useReducedMotion from "../hooks/useReducedMotion";
 import { AppStateContext } from "../context/AppState";
 
+interface ProjectImage {
+  image: string;
+  altText: string;
+}
+
 const ScrollableContainer = styled.div<{ $maxHeight?: string }>`
   max-height: ${(props) => props.$maxHeight};
   overflow-y: scroll;
@@ -146,14 +151,17 @@ export const ProjectPage = () => {
   const context = useContext(AppStateContext);
   const reducedMotion = useReducedMotion(context);
 
-  const { title, category, description, imageGallery, ctas } = location.state;
-
   useEffect(() => {
     if (!reducedMotion) {
       animate("img", { y: [200, 0] }, { delay: stagger(0.35) });
       animate(".copy-item", { opacity: [0, 1] }, { delay: stagger(0.1) });
     }
   }, []);
+
+  const pageEntry = context.data.entries.find(
+    (i) => i.id === location.pathname.substring(1)
+  );
+  const { title, category, description, imageGallery, ctas } = pageEntry;
 
   return (
     <BasicLayout>
@@ -181,11 +189,17 @@ export const ProjectPage = () => {
             </div>
           </Typography>
         </FlexContainer>
-        <ScrollableContainer $maxHeight="100vh">
+        <ScrollableContainer $maxHeight="100vh" tabIndex={0} role="group">
           <FlexContainer $direction="column">
             {imageGallery
-              ? imageGallery.map((img: string) => {
-                  return <img key={img} src={`/images/${img}`} />;
+              ? imageGallery.map((entry: ProjectImage) => {
+                  return (
+                    <img
+                      key={entry.image}
+                      alt={entry.altText}
+                      src={`/images/${entry.image}`}
+                    />
+                  );
                 })
               : null}
           </FlexContainer>

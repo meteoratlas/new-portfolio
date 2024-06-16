@@ -91,7 +91,7 @@ const Name = styled.div`
     overflow: visible;
   }
   span {
-    display: inline-block;
+    display: block;
   }
   span:first-child {
     top: 0;
@@ -101,12 +101,18 @@ const Name = styled.div`
 
 const LinkOut = styled.a`
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  position: relative;
 
   span {
-    margin-left: 1em;
-    font-size: 1.1em;
-    padding-bottom: 4px;
+    margin-left: 1.4em;
+    font-size: 1.2em;
+    padding-bottom: 10px;
+  }
+
+  svg {
+    position: absolute;
+    translate: 0 7px;
   }
 `;
 
@@ -124,8 +130,10 @@ export function Sidebar() {
     <SidebarContainer>
       <p className="copy-item">Hi, I'm</p>
       <Name className="copy-item">
-        <h1>Kelly</h1>
-        <h1>Horan</h1>
+        <h1>
+          <span>Kelly</span>
+          <span>Horan</span>
+        </h1>
       </Name>
       <p className="copy-item">
         a web and application developer specializing in front end development.
@@ -142,10 +150,10 @@ export function Sidebar() {
 
       <div className="links copy-item">
         <LinkOut href="https://www.linkedin.com/in/kellyhoran2/">
-          <FaLinkedinIn /> <span>Linkedin</span>
+          <FaLinkedinIn aria-hidden="true" role="img" /> <span>Linkedin</span>
         </LinkOut>
         <LinkOut href="https://github.com/meteoratlas">
-          <FaGithub /> <span>Github</span>
+          <FaGithub aria-hidden="true" role="img" /> <span>Github</span>
         </LinkOut>
         {/* <LinkOut href="#"> */}
         {/* <MdEmail /> <span>Email</span> */}
@@ -153,6 +161,7 @@ export function Sidebar() {
       </div>
       <button
         value={context.noMotion}
+        aria-pressed={context.noMotion}
         onClick={() => {
           context.setNoMotion(!context.noMotion);
         }}

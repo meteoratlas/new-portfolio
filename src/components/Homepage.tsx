@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Sidebar } from "./Sidebar";
 import { CardList } from "./CardList";
 import { BasicLayout } from "./BasicLayout";
-import { motion } from "framer-motion";
 
 const FlexContainer = styled.div`
   display: flex;

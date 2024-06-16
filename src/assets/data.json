@@ -5,8 +5,17 @@
       "category": "Web Development",
       "title": "Nissan - New Homepage",
       "cardImage": "thumb-nissan.jpg",
-      "cardAlt": "thumbnail of the nissanusa.com homepage",
-      "imageGallery": ["nissan-1.jpg", "nissan-2.jpg"],
+      "cardAlt": "the nissanusa.com homepage",
+      "imageGallery": [
+        {
+          "image": "nissan-1.jpg",
+          "altText": "the Nissan USA homepage, featuring a vehicle picker component containing a red Nissan Pathfinder SUV"
+        },
+        {
+          "image": "nissan-2.jpg",
+          "altText": "the Nissan USA homepage, featuring a vehicle picker component containing a yellow Nissan Z sportscar"
+        }
+      ],
       "description": "Our team was recently engaged to redo the homepage of the Nissan USA website. I implemented the page's keystone feature: the vehicle selection component that appears at the top. It is designed to use large images and dynamic animations to showcase the vehicles, and catch the user's eye as they arrive on the page. As the leading element on a highly-trafficked website, loading speed was a key concern. This component intelligently lazy loads images in priority of when the user will see them. The animation is handled by stacking the images and adjusting their z-index to minimize reflows. A clipping mask animation is then used to wipe to the selected image, creating a smooth and elegant transition effect.",
       "ctas": [{ "URL": "http://www.nissanusa.com", "label": "Visit Website" }]
     },
@@ -15,8 +24,21 @@
       "category": "Web Development",
       "title": "Nissan - Electric Vehicles",
       "cardImage": "thumb-ev.jpg",
-      "cardAlt": "thumbnail of the nissanusa.com electric vehicle page",
-      "imageGallery": ["ev-1.jpg", "ev-2.jpg", "ev-3.jpg"],
+      "cardAlt": "the nissanusa.com electric vehicle page",
+      "imageGallery": [
+        {
+          "image": "ev-1.jpg",
+          "altText": "a specs table component on the Nissan electric vehicles page"
+        },
+        {
+          "image": "ev-2.jpg",
+          "altText": "a collapsible accordion component on the Nissan electric vehicles page"
+        },
+        {
+          "image": "ev-3.jpg",
+          "altText": "a carousel component on the Nissan electric vehicles page"
+        }
+      ],
       "description": "An informational page for Nissan electric vehicle lineup. The page is meant to clear up misconceptions and answer questions users may have about electric vehicles. Of course, there is also a lot of information about Nissan's electric vehicle offerings, the ARIYA and the LEAF. The page is meant to evoke the traditional Nissan styling and layouts seen elsewhere on the site, with a more modern approach. I worked with a small team at my company to implement the design using React, Gatsby, Framer Motion, and Styled Components. We built a series of new components to accomplish this, including layout, copy, and interactive components to deliver info and make authoring and editing easy.",
       "ctas": [
         {
@@ -30,12 +52,24 @@
       "category": "Web Development",
       "title": "Infiniti - Inspirations",
       "cardImage": "thumb-inspire.jpg",
-      "cardAlt": "thumbnail of the infinitiusa.com inspirations page",
+      "cardAlt": "the infinitiusa.com inspirations page",
       "imageGallery": [
-        "inspire-1.jpg",
-        "inspire-2.jpg",
-        "inspire-4.jpg",
-        "inspire-3.jpg"
+        {
+          "image": "inspire-1.jpg",
+          "altText": "The Infiniti Inspirations page header"
+        },
+        {
+          "image": "inspire-2.jpg",
+          "altText": "A collection of user-selected cards inside the Inspirations page"
+        },
+        {
+          "image": "inspire-3.jpg",
+          "altText": "The share modal of the Inspirations component"
+        },
+        {
+          "image": "inspire-4.jpg",
+          "altText": "The Infiniti Inspirations page header, with a detailed photo of the QX80 SUV"
+        }
       ],
       "description": "A project for Infiniti that allows the user to save aspects of vehicles that interest them (such as trim colours, interior, and even concepts such as spaciousness) as they browse the QX60 & QX80 pages. These aspects can then be viewed as a collection of cards on a data-driven page, and shared with friends, family, or an Infiniti retailer.  I was the lead front-end developer for the SPA-style card shelf page of this project. The cards can be flipped to reveal more information, added, and deleted. If you want to explore yourself, you will want to add a few items from a vehicle page (such as the QX80) before checking out the card shelf page.",
       "ctas": [
@@ -53,9 +87,22 @@
       "id": "platform-development",
       "category": "Web Development",
       "title": "Nissan & Infiniti - Platform Develop­ment",
-      "cardAlt": "thumbnail of a nissanusa.com page",
+      "cardAlt": "the nissanusa.com page",
       "cardImage": "thumb-pd.jpg",
-      "imageGallery": ["pd-5.jpg", "pd-2.jpg", "pd-3.jpg"],
+      "imageGallery": [
+        {
+          "image": "pd-5.jpg",
+          "altText": "The Nissan USA Business and Fleet contact component"
+        },
+        {
+          "image": "pd-2.jpg",
+          "altText": "A vehicle selector for Nissan cars inside the bluetooth compatibility component"
+        },
+        {
+          "image": "pd-3.jpg",
+          "altText": "The results page of the bluetooth compatibility component"
+        }
+      ],
       "description": "I have made countless contributions to the shared component library that powers the Nissan and Infiniti American and Canadian websites. I have added new features, fixed bugs, singlehandedly created new components (including markup, styling, and logic), and advised producers and content authors on the best usage of our library. Given how huge and diverse our audience is, we pay special attention to accessibility, following brand design specs, UX, and performance.",
       "ctas": [
         { "URL": "http://www.nissanusa.com", "label": "Visit Nissan Website" },
@@ -70,11 +117,20 @@
       "category": "Software Development, Digital Art",
       "title": "Procedural Pointillism",
       "cardImage": "thumb-pp.jpg",
-      "cardAlt": "thumbnail of an abstract digital art piece",
+      "cardAlt": "an abstract digital art piece",
       "imageGallery": [
-        "processing1/1.jpg",
-        "processing1/2.jpg",
-        "processing1/3.jpg"
+        {
+          "image": "processing1/1.jpg",
+          "altText": "abstract digital art of a rock face"
+        },
+        {
+          "image": "processing1/2.jpg",
+          "altText": "abstract digital art of a mailbox"
+        },
+        {
+          "image": "processing1/3.jpg",
+          "altText": "abstract digital art of a tugboat"
+        }
       ],
       "description": "A digital art tool I programmed in Processing, a Java-based programming environment for interactive media projects. It takes an image as input, and 'redraws' it with geometric primitives, starting with broad brushes and becoming more detailed as the process continues. The brushes move across the canvas using a random walk algorithm. The colour of each shape is sampled from the image. Depending on what parameters the program is given, the resulting output can vary wildly. The photographs used in this project were also taken by me."
     }

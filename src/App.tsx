@@ -1,17 +1,18 @@
 import "./App.css";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import { AnimatedRoute } from "./components/AnimatedRoute";
 import { useState } from "react";
 import { AppStateContext } from "./context/AppState";
+import data from "./assets/data.json";
 
 function App() {
   const [noMotion, setNoMotion] = useState(false);
 
   return (
-    <AppStateContext.Provider value={{ noMotion, setNoMotion }}>
-      <HashRouter>
+    <AppStateContext.Provider value={{ noMotion, setNoMotion, data }}>
+      <BrowserRouter>
         <AnimatedRoute />
-      </HashRouter>
+      </BrowserRouter>
     </AppStateContext.Provider>
   );
 }

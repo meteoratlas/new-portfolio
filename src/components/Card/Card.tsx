@@ -22,7 +22,7 @@ const CardDiv = styled.div`
     align-items: center;
   }
 
-  h3 {
+  h2 {
     font-family: "Source Serif 4", serif;
     font-size: 20px;
     font-style: italic;
@@ -42,7 +42,7 @@ export const Card = ({ entry }: CardData) => {
         <img src={`/images/${entry.cardImage}`} alt={entry.cardAlt} />
         <div className="title">
           {" "}
-          <h3>{entry.title}</h3>
+          <h2>{entry.title}</h2>
         </div>
       </CardDiv>
     </motion.div>
