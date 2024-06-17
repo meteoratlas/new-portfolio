@@ -13,6 +13,7 @@ const CardContainer = styled.main`
   justify-content: space-around;
   margin-top: 2em;
   width: 100%;
+  overflow: clip;
   grid-gap: 16px;
   margin-top: 2em;
 
