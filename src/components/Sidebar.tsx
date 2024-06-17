@@ -26,11 +26,12 @@ import { useContext, useEffect } from "react";
 import { animate, stagger, useReducedMotion } from "framer-motion";
 import { AppStateContext } from "../context/AppState";
 
-const SidebarContainer = styled.div`
+const SidebarContainer = styled.section`
   width: 90%;
   padding: 0 1rem;
   font-family: "Lato", sans-serif;
   flex-shrink: 0;
+  /* box-shadow: 5px 0 5px 5px rgba(67, 67, 67, 0.1); */
 
   .links {
     margin-top: 1em;
@@ -45,8 +46,9 @@ const SidebarContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-    height: 100vh;
+    /* height: 100vh; */
     width: 28%;
+    /* margin-top: -2em; */
     /* max-width: 350px; */
   }
 
@@ -121,10 +123,10 @@ export function Sidebar() {
   const reducedMotion = useReducedMotion(context);
 
   useEffect(() => {
-    if (!reducedMotion.noMotion) {
+    if (!reducedMotion) {
       animate(".copy-item", { opacity: [0, 1] }, { delay: stagger(0.1) });
     }
-  }, [reducedMotion]);
+  }, []);
 
   return (
     <SidebarContainer>
@@ -140,8 +142,9 @@ export function Sidebar() {
       </p>
       <p className="copy-item">
         I've had an interest in the intersection between art and technology
-        since I was young, and have been lucky enough to fulfill that interest
-        in web dev. I currently work as a Senior Developer at Critical Mass.
+        since I was young, and have been lucky enough to explore that interest
+        through web development. I currently work as a Senior Developer at
+        Critical Mass.
       </p>
       <p className="copy-item">
         Here are a few of the projects I've worked on, from things I've done at

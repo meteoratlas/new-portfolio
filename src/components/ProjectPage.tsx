@@ -35,18 +35,21 @@ const ScrollableContainer = styled.div<{ $maxHeight?: string }>`
 `;
 
 const BackLink = styled.div`
-  position: fixed;
+  /* position: fixed;
   bottom: 0;
-  left: 0;
+  left: 0; */
   font-size: 32px;
   font-family: "Source Serif 4", serif;
   font-weight: 900;
   font-style: italic;
-  border-top: 2px solid var(--color-black);
-  border-right: 2px solid var(--color-black);
+  /* border-top: 2px solid var(--color-black);
+  border-right: 2px solid var(--color-black); */
+  width: fit-content;
 
   background-color: var(--color-white);
-  padding: 0.5em 1em;
+  /* padding: 0em 1em; */
+  padding-top: 1em;
+  position: relative;
 
   a,
   a:visited {
@@ -57,18 +60,19 @@ const BackLink = styled.div`
     position: absolute;
     left: -35px;
     top: 9px;
-    display: none;
+    display: inline;
+    /* display: none; */
 
-    @media (min-width: 768px) {
+    /* @media (min-width: 768px) {
       display: inline;
-    }
+    } */
   }
+  padding: 0;
+  margin: 2rem 2rem;
+  border: none;
 
   @media (min-width: 768px) {
-    position: absolute;
-    padding: 0;
-    margin: 2rem 3rem;
-    border: none;
+    /* position: absolute; */
   }
 `;
 
@@ -116,6 +120,7 @@ const Typography = styled.div`
     text-decoration: none;
     transition: background-color 0.4s;
     font-family: "Lato", sans-serif;
+    text-align: center;
     font-size: 22px;
     margin-top: 4px;
     margin-right: 8px;
@@ -187,6 +192,14 @@ export const ProjectPage = () => {
                   })
                 : null}
             </div>
+            <BackLink>
+              <motion.div whileHover={{ scale: reducedMotion ? 1 : 1.1 }}>
+                <Link to="/">
+                  <IoMdArrowBack />
+                  Back
+                </Link>
+              </motion.div>
+            </BackLink>
           </Typography>
         </FlexContainer>
         <ScrollableContainer $maxHeight="100vh" tabIndex={0} role="group">
@@ -205,14 +218,6 @@ export const ProjectPage = () => {
           </FlexContainer>
         </ScrollableContainer>
       </FlexContainer>
-      <BackLink>
-        <motion.div whileHover={{ scale: reducedMotion ? 1 : 1.25 }}>
-          <Link to="/">
-            <IoMdArrowBack />
-            Back
-          </Link>
-        </motion.div>
-      </BackLink>
     </BasicLayout>
   );
 };

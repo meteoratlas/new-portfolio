@@ -7,7 +7,7 @@ import { animate, stagger } from "framer-motion";
 import { AppStateContext } from "../context/AppState";
 import useReducedMotion from "../hooks/useReducedMotion";
 
-const CardContainer = styled.section`
+const CardContainer = styled.main`
   display: grid;
   grid-template-columns: repeat(auto-fill, 350px);
   justify-content: space-around;
