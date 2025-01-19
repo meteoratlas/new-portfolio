@@ -47,7 +47,6 @@ const BackLink = styled.div`
   width: fit-content;
 
   background-color: var(--color-white);
-  /* padding: 0em 1em; */
   padding-top: 1em;
   position: relative;
 
